@@ -13,6 +13,7 @@
   },
   "permissions" : ["activeTab","scripting"],
   "background":{
-    "service_worker": "./js/index.js"
+    "service_worker": "./js/index.js",
+    "type": "module"
   }
 }
