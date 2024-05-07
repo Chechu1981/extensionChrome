@@ -8,11 +8,11 @@ chrome.action.onClicked.addListener((tab) => {
   })
 })
 
-chrome.action.onLoaded.addListener((tab) => {
-  alert(tab)
+chrome.tabs.onUpdated.addListener((tab) => {
+  if (tab.url?.startsWith("https://power-supply.kbrw.fr")){
+    chrome.scripting.executeScript({
+      target: {tabId: tab},
+      files: ['./js/content.js']
+    })
+  }
 })
-/*
-if (chrome.action.location.href.includes('power-supply')){
-  const parrafos = document.getElementsByClassName('psa-order-content-line')
-  parrafos[5].innerHTML = '<button>Hola mundo</button>'
-}*/

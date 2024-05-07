@@ -11,9 +11,14 @@
       "128": "./images/icon.png"
     }
   },
-  "permissions" : ["activeTab","scripting"],
-  "background":{
-    "service_worker": "./js/index.js",
-    "type": "module"
-  }
+  "background":{ "service_worker": "./js/index.js" },
+  "permissions": [
+    "tabs",
+    "notifications",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://power-supply.kbrw.fr/*"
+  ]
 }
