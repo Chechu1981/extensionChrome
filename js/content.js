@@ -49,11 +49,11 @@ if (window.location.href.includes('power-supply')){
 
   let asunto = "Referencia alternativa PPCR"
   let saludo = "Buenos días:%0A"
-  let mensaje =`La referencia ${refinicial} pedida el día ${fecha} está sin plazo de entrega y fábrica nos proponen la referencia ${refalter[0]} en su lugar. La fecha de entrega de esta alternativa es para el ${fechaestimada} ¿Confirmamos la propuesta o dejamos el pedido inicial?`
+  let mensaje =`La referencia ${refinicial} pedida el día ${fecha} está sin plazo de entrega y fábrica nos proponen la referencia ${refalter[0].replaceAll('&','and')} en su lugar. La fecha de entrega de esta alternativa es para el ${fechaestimada} ¿Confirmamos la propuesta o dejamos el pedido inicial?`
   if(refalter.length > 1){
     mensaje = `La referencia ${refinicial} pedida el día ${fecha} está sin plazo de entrega y fábrica propone en su lugar:%0A%0A`
     for(let i = 0; i < refalter.length; i++)
-      mensaje += `${refalter[i]} %0A`
+      mensaje += `${refalter[i].replaceAll('&','and')} %0A`
     mensaje += `%0A¿Confirmamos la propuesta o dejamos el pedido inicial?`
   }
 
